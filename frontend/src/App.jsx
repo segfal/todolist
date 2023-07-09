@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState ,useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addTask,removeTask,toggleTask } from './redux/actions'
+import { addTask,removeTask } from './redux/actions'
 import { initialState } from './redux/reducer'
 
 const showTodoList = (todoList) => {
@@ -47,8 +47,12 @@ const App = () => {
   }
 
   const handleRemoveTask = () => {
-    dispatch(removeTask())
+    if(task === undefined){
+      return
+    }
+    dispatch(removeTask(task))
   }
+
  
 
   useEffect(() => {
