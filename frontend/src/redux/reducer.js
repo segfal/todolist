@@ -18,14 +18,10 @@ const rootReducer = (state = initialState, action) => {
             };
         case ToDoActionTypes.REMOVE_TASK:
             return {
-                ...state,
+                ...state,//remove the name of task from the array
                 tasks: state.tasks.filter(task => task.id !== action.payload)
             };
-        case ToDoActionTypes.TOGGLE_TASK:
-            return {
-                ...state,
-                tasks: state.tasks.map(task => task.id === action.payload ? { ...task, complete: !task.complete } : task)
-            };
+
         default:
             return state;
     }

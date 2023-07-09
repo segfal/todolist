@@ -49,11 +49,7 @@ const App = () => {
   const handleRemoveTask = () => {
     dispatch(removeTask())
   }
-
-
-  const handleToggleTask = () => {
-    dispatch(toggleTask())
-  }
+ 
 
   useEffect(() => {
     setTaskList(todoList)
@@ -81,12 +77,8 @@ const App = () => {
       >
         Remove task
       </button>
-      <button
-        onClick={handleToggleTask}
-       
-      >
-        Toggle task
-      </button>
+
+    
     
       {showTodoList(todoList)}
       
