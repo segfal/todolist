@@ -9,7 +9,7 @@ export const initialState = {
 
 
 
-export const rootReducer = (state = initialState, action) => {
+const rootReducer = (state = initialState, action) => {
     switch (action.type) {
         case ToDoActionTypes.ADD_TASK:
             return {
@@ -30,3 +30,6 @@ export const rootReducer = (state = initialState, action) => {
             return state;
     }
 }
+
+
+export default rootReducer;

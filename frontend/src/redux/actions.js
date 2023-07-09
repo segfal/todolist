@@ -2,7 +2,6 @@ import { ToDoActionTypes } from "./actionTypes";
 
 
 
-
 export const addTask = (task) => ({
     type: ToDoActionTypes.ADD_TASK,
     payload: task
@@ -22,7 +21,4 @@ export const setTasks = (tasks) => ({
     type: ToDoActionTypes.SET_TASKS,
     payload: tasks
 });
-
-
-
 
