@@ -10,7 +10,7 @@ export const initialState = {
 
 
 const rootReducer = (state = initialState, action) => {
-    console.log(state.tasks,action.payload,state.task);
+    
     switch (action.type) {
         case ToDoActionTypes.ADD_TASK:
             return {
@@ -22,8 +22,8 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,//remove the name of task from the array
                 tasks: state.tasks.filter(task => {
-                    //console.log(task)
-                    console.log(action.payload)
+                    
+                   
                     return task !== action.payload
                 })
             };

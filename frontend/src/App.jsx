@@ -2,37 +2,7 @@
 import { useState ,useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addTask,removeTask } from './redux/actions'
-import { initialState } from './redux/reducer'
-
-const showTodoList = (todoList) => {
-  if (todoList === undefined) {
-    return (
-      <div>
-        No todo list
-      </div>
-    )
-  }
-  if (todoList.length > 0) {
-    return (
-      <ul>
-        {todoList.map((todo, index) => {
-          return (
-            <li key={index}>
-              {todo}
-            </li>
-          )
-        })}
-      </ul>
-    )
-  } else {
-    return (
-      <div>
-        No todo list
-      </div>
-    )
-  }
-}
-
+import {ShowTodoList} from './TodoList'
 
 
 const App = () => {
@@ -53,15 +23,10 @@ const App = () => {
     dispatch(removeTask(task))
   }
 
- 
-
   useEffect(() => {
     setTaskList(todoList)
-    console.log(todoList)
   }
   , [todoList])
-
-  
 
   return (
     <div>
@@ -77,24 +42,13 @@ const App = () => {
       </button>
       <button
         onClick={handleRemoveTask}
-        
       >
         Remove task
       </button>
-
-    
-    
-      {showTodoList(todoList)}
+      {ShowTodoList(taskList)}
       
     </div>
   )
-
-
-
-
-  
 }
-
-
 
 export default App;
